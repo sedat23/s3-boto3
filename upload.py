@@ -27,6 +27,7 @@ except Exception as e:
 file_with_path = "File Name along with it's extension. Ex: Archive.zip or /Users/xyz/Desktop/Text.txt.., Full path is not required for files \
                     in current directory."
 finalOutputFileName = "Name of the file on S3 Bucket. If you want to place this file under existing folders for create new folders and upload, \
-                       provide the path here. Ex: abc/cd/finalFileName.zip, subFolderInbucket/FinalTextFile.txt... "
+                       provide the path here. Ex: abc/cd/finalFileName.zip, subFolderInbucket/FinalTextFile.txt... Note that extension is \
+                        part of outputfile name, boto3/s3 wouldn't infer the file extension, that has to be provided."
 
 s3Client.upload_file(file_with_path,s3BucketName,finalOutputFileName)
